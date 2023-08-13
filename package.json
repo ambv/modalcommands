@@ -4,6 +4,9 @@
   "description": "Custom commands for vscode-modaledit",
   "version": "23.8.0",
   "publisher": "ambv",
+	"repository": {
+		"url": "https://github.com/ambv/modalcommands"
+	},
   "engines": {
     "vscode": "^1.81.0"
   },
