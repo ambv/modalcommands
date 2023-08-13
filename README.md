@@ -1,71 +1,54 @@
 # modal-commands README
 
-This is the README for your extension "modal-commands". After writing up a brief description, we recommend including the following sections.
+This is a set of additional commands that I use in conjunction with
+[ModalEdit](https://marketplace.visualstudio.com/items?itemName=johtela.vscode-modaledit) to enable faster workflows.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### modal-commands.vimPaste
 
-For example if there is an image subfolder under your extension project workspace:
+When pasting content that consists of full lines, Vim provides special
+support that makes editing faster:
+- `P` causes the lines to be fully inserted before the current cursor
+  line;
+- `p` causes the lines to be fully inserted after the current cursor
+  line.
 
-\!\[feature X\]\(images/feature-x.png\)
+This happens even if the cursor is in the middle of the line. In both
+cases the cursor gets placed at the ^start of the first inserted line. 
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+To configure this, add to `"modaledit.keybindings"`:
+```
+"p": {
+    "command": "modal-commands.vimPaste",
+    "args": {
+        "before": false
+    }
+},
+"P": {
+    "command": "modal-commands.vimPaste",
+    "args": {
+        "before": true
+    }
+},
+```
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+VS Code + `johtela.ModalEdit`. I mean, you can run the commands here
+straight from the palette but it won't be very fast.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+See the documentation or `johtela.ModalEdit` on how to add these
+commands to `modaledit.keybindings`.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+I don't exactly know what I'm doing.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 23.8.0
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release. Just `modal-commands.vimPaste` present.
