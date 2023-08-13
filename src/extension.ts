@@ -7,25 +7,30 @@ async function vimPaste(
 ) {
     console.log("Before: " + args.before);
     let text = await vscode.env.clipboard.readText();
-    if (text.endsWith('\n')) {
-        if (args.before) { // uppercase `P`
-            await vscode.commands.executeCommand("modaledit.typeNormalKeys", {"keys": "0"});
-        }
-        else { // lowercase `p`
-            await vscode.commands.executeCommand("modaledit.typeNormalKeys", {"keys": "j0"});
+    if (text.endsWith("\n")) {
+        if (args.before) {
+            // uppercase `P`
+            await vscode.commands.executeCommand("modaledit.typeNormalKeys", {
+                keys: "0",
+            });
+        } else {
+            // lowercase `p`
+            await vscode.commands.executeCommand("modaledit.typeNormalKeys", {
+                keys: "j0",
+            });
         }
         const position = textEditor.selection.active;
         await vscode.commands.executeCommand("editor.action.clipboardPasteAction");
         await vscode.commands.executeCommand("modaledit.cancelSelection");
         console.log("Line:" + position.line);
         textEditor.selections = [new vscode.Selection(position, position)];
-        await vscode.commands.executeCommand("modaledit.typeNormalKeys", {"keys": "^"});
-    }
-    else {
-        if (args.before) { // uppercase `P`
+        await vscode.commands.executeCommand("modaledit.typeNormalKeys", { keys: "^" });
+    } else {
+        if (args.before) {
+            // uppercase `P`
             await vscode.commands.executeCommand("cursorRight");
-        }
-        else { // lowercase `p`
+        } else {
+            // lowercase `p`
         }
         await vscode.commands.executeCommand("editor.action.clipboardPasteAction");
         await vscode.commands.executeCommand("modaledit.cancelSelection");
