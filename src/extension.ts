@@ -34,7 +34,7 @@ async function vimPaste(
 
 export function activate(context: vscode.ExtensionContext) {
     let disposable = vscode.commands.registerTextEditorCommand(
-        "modal-commands.vimPaste",
+        "modalcommands.vimPaste",
         vimPaste,
     );
 

@@ -1,11 +1,11 @@
-# modal-commands README
+# ambv.modalcommands
 
 This is a set of additional commands that I use in conjunction with
 [ModalEdit](https://marketplace.visualstudio.com/items?itemName=johtela.vscode-modaledit) to enable faster workflows.
 
 ## Features
 
-### modal-commands.vimPaste
+### modalcommands.vimPaste
 
 When pasting content that consists of full lines, Vim provides special
 support that makes editing faster:
@@ -20,13 +20,13 @@ cases the cursor gets placed at the ^start of the first inserted line.
 To configure this, add to `"modaledit.keybindings"`:
 ```
 "p": {
-    "command": "modal-commands.vimPaste",
+    "command": "modalcommands.vimPaste",
     "args": {
         "before": false
     }
 },
 "P": {
-    "command": "modal-commands.vimPaste",
+    "command": "modalcommands.vimPaste",
     "args": {
         "before": true
     }
@@ -51,4 +51,4 @@ I don't exactly know what I'm doing.
 
 ### 23.8.0
 
-Initial release. Just `modal-commands.vimPaste` present.
+Initial release. Just `modalcommands.vimPaste` present.

@@ -1,5 +1,5 @@
 {
-  "name": "modal-commands",
+  "name": "modalcommands",
   "displayName": "Modal Commands",
   "description": "Custom commands for vscode-modaledit",
   "version": "23.8.0",
@@ -15,7 +15,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "modal-commands.vimPaste",
+        "command": "modalcommands.vimPaste",
         "title": "Vim Paste",
         "category": "Modal Commands"
       }
