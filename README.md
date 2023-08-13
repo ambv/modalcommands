@@ -49,6 +49,10 @@ I don't exactly know what I'm doing.
 
 ## Release Notes
 
+### 23.8.1
+
+No functional changes. Includes an icon.
+
 ### 23.8.0
 
 Initial release. Just `modalcommands.vimPaste` present.
